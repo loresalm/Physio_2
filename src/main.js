@@ -190,7 +190,7 @@ function displayQuestion(){
 
 
 		case "END":
-			QuestionTextDiv.innerText = "PRESS ALL, OR WRONGS"
+			QuestionTextDiv.innerText = "PRESS ALL OR EXAM"
 			R1DIV.innerText = "END"
 			R2DIV.innerText = "END"
 			R3DIV.innerText = "END"
@@ -209,11 +209,11 @@ function displayScore(i, par, NB_Q){
 			break;
 		case 0: 
 			ScoreDiv.style.background = "tomato";
-			ScoreDiv.innerText = "Wrong-->SCORE:"  + SCORE + " / " + par
+			ScoreDiv.innerText = "SCORE:"  + SCORE + " / " + par
 			break;
 		case 1: 
 			ScoreDiv.style.background = "lime"
-			ScoreDiv.innerText = "Correct-->SCORE:"  + SCORE + " / " + par
+			ScoreDiv.innerText = "SCORE:"  + SCORE + " / " + par
 			break;
 	}
 
