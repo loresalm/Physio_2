@@ -33,6 +33,12 @@ var tab_response_check= [false, false, false, false,false]
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //--INIT--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+Array.prototype.remove = function(from, to) {
+  var rest = this.slice((to || from) + 1 || this.length);
+  this.length = from < 0 ? this.length + from : from;
+  return this.push.apply(this, rest);
+};
+
 //Init firebase
 const firebaseConfig = {
     apiKey: "AIzaSyCUzpbIk250ioh0ji825D1m5jUgug0RRRM",
@@ -235,36 +241,68 @@ function chose(i){
 	if (next_state == true){
 		switch (i){
 			case 1:
-				R1.style.border = "10px solid"
-				R1.style.borderColor = "rgb(255, 254, 0)"
+				if(tab_response_check[i- 1] ==  false){
+					R1.style.border = "10px solid"
+					R1.style.borderColor = "rgb(255, 254, 0)"
+				}else{
+					R1.style.border = ""
+					R1.style.borderColor = ""
+				}
 				break
 			case 2:
-				R2.style.border = "10px solid"
-				R2.style.borderColor = "rgb(255, 254, 0)"
+				if(tab_response_check[i- 1] ==  false){
+					R2.style.border = "10px solid"
+					R2.style.borderColor = "rgb(255, 254, 0)"
+				}else{
+					R2.style.border = ""
+					R2.style.borderColor = ""
+				}
 				break
 
 			case 3:
-				R3.style.border = "10px solid"
-				R3.style.borderColor = "rgb(255, 254, 0)"
+				if(tab_response_check[i- 1] ==  false){
+					R3.style.border = "10px solid"
+					R3.style.borderColor = "rgb(255, 254, 0)"
+				}else{
+					R3.style.border = ""
+					R3.style.borderColor = ""
+				}
 				break
 
 			case 4:
-				R4.style.border = "10px solid"
-				R4.style.borderColor = "rgb(255, 254, 0)"
+				if(tab_response_check[i- 1] ==  false){
+					R4.style.border = "10px solid"
+					R4.style.borderColor = "rgb(255, 254, 0)"
+				}else{
+					R4.style.border = ""
+					R4.style.borderColor = ""
+				}
 				break
 
 			case 5:
-				R5.style.border = "10px solid"
-				R5.style.borderColor = "rgb(255, 254, 0)"
+				if(tab_response_check[i- 1] ==  false){
+					R5.style.border = "10px solid"
+					R5.style.borderColor = "rgb(255, 254, 0)"
+				}else{
+					R5.style.border = ""
+					R5.style.borderColor = ""
+				}
 				break
 		}
-		console.log(tab_response_check[i- 1])
+		
 		console.log("befroe")
+		console.log(tab_response_check)
 		if(tab_response_check[i- 1] ==  false){
 			save_reponse.push(i)
 
 			tab_response_check[i- 1] = true 
+		}else{
+			var j = save_reponse.indexOf(i)
+			save_reponse.remove(j)
+			tab_response_check[i- 1] = false 
 		}
+		console.log("after")
+		console.log(tab_response_check)
 		console.log("save_reponse")
 		console.log(save_reponse)
 		
