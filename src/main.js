@@ -15,7 +15,7 @@ var STATE = "END"
 var save_reponse= []
 var next_state= false
 var GREEN = "rgba(100, 230, 122, 0.92)"
-var RED = "rgba(255, 110, 110, 0.82)"
+var RED = "rgba(245, 92, 92, 0.92)"
 
 //firebase
 var DB 
